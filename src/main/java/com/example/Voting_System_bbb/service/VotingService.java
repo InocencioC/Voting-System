@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class VotingService {
-
-    private static final String TOPIC_VOTING = "VOTING";
+    private static final String TOPIC_VOTING = "voting";
     private final KafkaTemplate<Object, Object> template;
 
     public void AddEvent(ParticipantModel participantModel) {
         template.send(TOPIC_VOTING, participantModel);
     }
 }
+

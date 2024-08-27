@@ -10,22 +10,20 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/parameters")
 public class ParameterizationController {
-
-    private final ParameterizationRepository repository;
-
+    private final ParameterizationRepository parameterizationRepository;
     public ParameterizationController(ParameterizationRepository repository) {
-        this.repository = repository;
+        this.parameterizationRepository = repository;
     }
 
     @PostMapping("/save")
     public ResponseEntity<ParameterizationModel> save(@RequestBody ParameterizationModel parameterizationModel) {
-        ParameterizationModel entity = repository.save(parameterizationModel);
+        ParameterizationModel entity = parameterizationRepository.save(parameterizationModel);
         return ResponseEntity.ok(entity);
     }
 
     @GetMapping("/consultation")
     public ResponseEntity<ParameterizationModel> consultation(@RequestParam String key) {
-        Optional<ParameterizationModel> optParameter = repository.findById(key);
+        Optional<ParameterizationModel> optParameter = parameterizationRepository.findById(key);
         if (optParameter.isEmpty()) {
             return ResponseEntity.notFound().build();
         }

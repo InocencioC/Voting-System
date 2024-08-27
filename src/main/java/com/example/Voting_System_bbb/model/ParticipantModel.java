@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Document("participants")
 public class ParticipantModel {
-@Id
+    @Id
     private String id;
     private String name;
 }

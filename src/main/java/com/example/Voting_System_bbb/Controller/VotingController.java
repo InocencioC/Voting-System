@@ -19,6 +19,6 @@ public class VotingController {
     @PostMapping
     public ResponseEntity<String> vote(@RequestBody ParticipantModel participantModel) {
        votingService.AddEvent(participantModel);
-        return ResponseEntity.ok("vote accepted");
+        return ResponseEntity.ok("Vote accepted");
     }
 }
