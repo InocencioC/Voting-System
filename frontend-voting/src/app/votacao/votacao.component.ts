@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {Participant} from "../model/participant";
+import {Participante} from "../model/participante";
 import {RestService} from "../service/RestService";
 
 @Component({
   selector: 'app-votacao',
-  templateUrl: './voting.component.html',
-  styleUrls: ['./voting.component.css'],
-  standalone: true
+  templateUrl: './votacao.component.html',
+  styleUrls: ['./votacao.component.css']
 })
-export class VotingComponent implements OnInit {
+export class VotacaoComponent implements OnInit {
 
   title = 'Votação BBB 22';
-  participantes: Participant[] | undefined;
+  participantes: Participante[] | undefined;
 
   constructor(private restService : RestService) {}
 
